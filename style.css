@@ -1,0 +1,36 @@
+.my-background {
+    background-image: linear-gradient(to right, #c1c8e4, #84ceeb, #c1c8e4);
+}
+
+.custom-form {
+    background-image: linear-gradient(30deg, rgba(193, 200, 228, 0.5), rgba(132, 206, 235, 0.5), rgba(193, 200, 228, 0.5));
+    padding: 1em;
+    border-radius: 1em;
+}
+
+.my-heading {
+    color: #ffffff;
+}
+
+.landing-container {
+    background-image: linear-gradient(30deg, rgba(193, 200, 228, 0.5), rgba(132, 206, 235, 0.5), rgba(193, 200, 228, 0.5));
+    padding: 1em;
+    border-radius: 1em;
+}
+
+.custom-text-purple {
+    color: #8860d0;
+}
+
+.custom-text-blue {
+    color: #5680e9
+}
+
+.my-gradient {
+    background-image: url("img/gradient.jpg");
+    background-size: cover;
+}
+
+.admin-panel {
+    background-image: linear-gradient(30deg, rgba(193, 200, 228, 0.5), rgba(132, 206, 235, 0.5), rgba(193, 200, 228, 0.5));
+}
