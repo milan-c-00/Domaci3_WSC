@@ -66,7 +66,7 @@
             $name = $first_name ." ". $last_name;
             $email = $_POST['email'];
             $username = $_POST['username'];
-            $password = $_POST['password'];
+            $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
             $role = 'regular_user';
 
             $sql = "INSERT INTO users(name, email, username, password, role) VALUES (?,?,?,?,?)";

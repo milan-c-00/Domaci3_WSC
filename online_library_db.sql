@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 25, 2023 at 09:07 PM
+-- Generation Time: Mar 26, 2023 at 06:33 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -80,7 +80,7 @@ CREATE TABLE `users` (
   `name` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `username` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL,
+  `password` varchar(60) NOT NULL,
   `role` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -89,9 +89,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `username`, `password`, `role`) VALUES
-(1, 'admin', 'admin@mailinator.com', 'admin', 'admin', 'administrator'),
-(2, 'Marko Markovic', 'marko@mailinator.com', 'marko123', 'marko123', 'regular_user'),
-(4, 'Janko Jankovic', 'janko@mailinator.com', 'janko123', 'janko123', 'regular_user');
+(1, 'admin', 'admin@mailinator.com', 'admin', '$2y$10$kWLP9TXgyBxmlRRRJzhKuuxt4EpEU4X923OLw8ILjs1Y4/8QMsThO', 'administrator'),
+(2, 'Marko Markovic', 'marko@mailinator.com', 'marko123', '$2y$10$Gz0VkrBIE8TcWTKGRGj.We1tsrveUD2Ud7wPPzX0gqx7S2Amn6lAi', 'regular_user'),
+(4, 'Janko Jankovic', 'janko@mailinator.com', 'janko123', '$2y$10$0smNzBHzYv5k.E13NAMI7u1MI18vt29I8Dx9RUGaLYgGpXsSMU6cq', 'regular_user'),
+(5, 'Petar Petrovic', 'petar@mailinator.com', 'petar123', '$2y$10$MGPIqJsg7wHYNaepTkZ5Yee84/I3uaThdtTPW4wyNEbQHRAoD0Vmi', 'regular_user');
 
 -- --------------------------------------------------------
 
@@ -113,7 +114,7 @@ CREATE TABLE `user_book` (
 INSERT INTO `user_book` (`id`, `user_id`, `book_id`, `start_date`) VALUES
 (3, 4, 3, '2023-03-17 16:43:39'),
 (5, 2, 9, '2023-03-24 17:47:29'),
-(6, 2, 6, '2023-03-25 21:02:54');
+(7, 2, 6, '2023-03-25 21:34:56');
 
 --
 -- Indexes for dumped tables
@@ -166,13 +167,13 @@ ALTER TABLE `books`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `user_book`
 --
 ALTER TABLE `user_book`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables

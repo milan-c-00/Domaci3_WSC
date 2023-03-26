@@ -54,10 +54,10 @@
 
             $username = $_POST['username'];
             $password = $_POST['password'];
-
-            $sql = "SELECT * FROM users WHERE username = ? AND password = ?";
+            
+            $sql = "SELECT * FROM users WHERE username = ?";
             $stmt = mysqli_prepare($conn, $sql);
-            mysqli_stmt_bind_param($stmt, 'ss', $username, $password);
+            mysqli_stmt_bind_param($stmt, 's', $username);
             mysqli_stmt_execute($stmt);
  
             $data = mysqli_fetch_assoc(mysqli_stmt_get_result($stmt));
@@ -70,8 +70,8 @@
 
             $auth_data = getAuthData();
             $login_data = $_POST;
-                        
-            if($auth_data && $auth_data['username'] === $login_data["username"] && $auth_data['password'] === $login_data["password"]){
+
+            if($auth_data && $auth_data['username'] === $login_data["username"] && password_verify($login_data["password"], $auth_data["password"])){
                 $_SESSION['auth_status'] = 'authorized';
                 $_SESSION['my_id'] = $auth_data['id'];
 
